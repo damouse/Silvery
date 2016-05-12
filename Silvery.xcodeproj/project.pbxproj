@@ -63,6 +63,15 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		50A3135F1CDAB66C007D0B7F /* Meta */ = {
+			isa = PBXGroup;
+			children = (
+				A21594491B94D85C00F2F665 /* Silvery.podspec */,
+				A2A8279B1BD1D56D00E45CAA /* Silvery.playground */,
+			);
+			name = Meta;
+			sourceTree = "<group>";
+		};
 		50AA9E8F1CDA77470035B484 /* SilveryTests */ = {
 			isa = PBXGroup;
 			children = (
@@ -76,10 +85,9 @@
 		A215941D1B94D79300F2F665 = {
 			isa = PBXGroup;
 			children = (
-				A21594491B94D85C00F2F665 /* Silvery.podspec */,
-				A2A8279B1BD1D56D00E45CAA /* Silvery.playground */,
 				A21594291B94D79300F2F665 /* Silvery */,
 				50AA9E8F1CDA77470035B484 /* SilveryTests */,
+				50A3135F1CDAB66C007D0B7F /* Meta */,
 				A21594281B94D79300F2F665 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -402,6 +410,7 @@
 				50AA9E981CDA77470035B484 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 		A21594211B94D79300F2F665 /* Build configuration list for PBXProject "Silvery" */ = {
 			isa = XCConfigurationList;
