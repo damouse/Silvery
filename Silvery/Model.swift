@@ -29,12 +29,15 @@
     - All properties must conform to the Property protocol
     - Properties may not be implicitly unwrapped optionals
 */
-public protocol Model : Property {}
 
+// Magic numbers for offsetting into objects
 let WORD_SIZE = 8
 let DEFAULT_CLASS_OFFSET = 2
 
-extension Model {
+
+public protocol Silvery : Property {}
+
+extension Silvery {
 
     public subscript (key: String) -> Property? {
         get {
@@ -47,8 +50,8 @@ extension Model {
         set {
             do {
                 try setValue(newValue, forKey: key)
-            } catch {
-                print("Failed to set \(key)")
+            } catch let e {
+                print("Failed to set \(key). Error: \(e)")
             }
         }
     }
@@ -147,6 +150,18 @@ func x(x: Any, isY y: Any.Type) throws {
         throw Error.CannotSetTypeAsType(x: x.dynamicType, y: y)
     }
 }
+
+// We must create two seperate kinds of object here
+// i think this belongs in DSON, not here. This is a library for access based on keys, not conversion to and from DSON
+// But what about "all keys," ignore functions, etc?
+public class SilveryClass: Silvery {
+    public required init() { }
+}
+
+
+
+
+
 
 
 

@@ -14,7 +14,7 @@ class Parent {
     var baseStr = "baseStr"
 }
 
-class Child: Parent, Model {
+class Child: Parent, Silvery {
     var str1 = "str1"
     var int1 = 123456
     
@@ -36,7 +36,7 @@ class Child: Parent, Model {
     
     var str4 = "str4"
     
-    override init() {}
+    required override init() {}
 }
 
 

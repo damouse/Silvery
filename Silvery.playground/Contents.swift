@@ -5,22 +5,22 @@ Try out Silvery here!
 import Foundation
 @testable import Silvery
 
+class Cat: SilveryClass {
+    var str: String
+    
+    init(name: String) {
+        str = name
+    }
+    
+    required init() {
+        str = "asdf"
+    }
+}
 
 // Lets get generic introspection working, shall we?
+var c = Cat(name: "Hello!")
 
-func pab(o: Any, offset: Int) -> UnsafePointer<Void> {
-    var object = o
-    return withUnsafePointer(&object) { UnsafePointer($0).advancedBy(offset) }
-}
+c["str"] = "There"
 
-func accept<A>(a: A) {
-    print(A.self)
-    
-    let p = pab(a, offset: 56)
-    let type = UnsafePointer<UInt8>(p)
-    String(type)
-    type.memory
-    
-}
+print(c.str)
 
-accept(("asdf", 1, true))

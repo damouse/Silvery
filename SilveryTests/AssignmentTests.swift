@@ -10,7 +10,11 @@
 import XCTest
 @testable import Silvery
 
-class Dog: Model {
+
+// Why the repetition on properties here? Based on the size in memory of a given type
+// things can get a little screwy. This ordering of properties tests those specific bugs
+// Floats and Booleans are the real culprits
+class Dog: Silvery {
     var str1 = "str1"
     var int1 = 123456
     
@@ -32,12 +36,12 @@ class Dog: Model {
     
     var str4 = "str4"
     
-    init() {}
+    required init() {}
 }
 
 
 // We can successfully write primitive types from objects
-class SettingTest: XCTestCase {
+class PrimitiveAssignment: XCTestCase {
     var d = Dog()
     
     func testString() {
@@ -84,3 +88,73 @@ class SettingTest: XCTestCase {
         XCTAssert(d.double3 == 3.0)
     }
 }
+
+
+// Ensure optional assignment works without needing extra values
+class Cat: Silvery {
+    var str: String?
+    var int: Int?
+    var bool: Bool?
+    var float: Float?
+    var double: Double?
+    
+    required init() {}
+}
+
+class OptionalProperties: XCTestCase {
+    func testOptionalReadability() {
+        let c = Cat()
+        
+        XCTAssert(c.str == nil)
+        XCTAssert(c.int == nil)
+        XCTAssert(c.bool == nil)
+        XCTAssert(c.float == nil)
+        XCTAssert(c.double == nil)
+    }
+    
+    func testOptionalString() {
+        var c = Cat()
+        c["str"] = "a"
+        XCTAssert(c.str! == "a")
+    }
+    
+    func testOptionalInt() {
+        var c = Cat()
+        c["int"] = 1
+        XCTAssert(c.int! == 1)
+    }
+    
+    func testOptionalBool() {
+        var c = Cat()
+        c["bool"] = true
+        XCTAssert(c.bool == true)
+    }
+    
+    func testOptionalFloat() {
+        var c = Cat()
+        let newFloat: Float = 123.456
+        c["float"] = newFloat
+        XCTAssert(c.float! == newFloat)
+    }
+    
+    func testOptionalDouble() {
+        var c = Cat()
+        c["double"] = 123.456
+        XCTAssert(c.double! == 123.456)
+    }
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

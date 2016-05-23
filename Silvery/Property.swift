@@ -6,7 +6,7 @@
 //  Copyright © 2015 Skyvive. All rights reserved.
 //
 
-/// All model properties must conform to this protocol
+// All model properties must conform to this protocol
 public protocol Property {}
 
 extension Property {
@@ -30,7 +30,6 @@ extension Property {
     mutating func codeOptionalInto(pointer: UnsafePointer<Void>) {
         (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional<Self>>).memory = self
     }
-
 }
 
 protocol OptionalProperty : Property {
