@@ -10,6 +10,7 @@
 		50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA9E901CDA77470035B484 /* AssignmentTests.swift */; };
 		50AA9EA11CDA792B0035B484 /* Silvery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* Silvery.framework */; };
 		50AA9EA51CDA89F20035B484 /* HeirarchyTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA9EA41CDA89F20035B484 /* HeirarchyTests.swift */; };
+		50BA18031CF4F62A00B34CE4 /* JsonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50BA18021CF4F62A00B34CE4 /* JsonTests.swift */; };
 		A215942B1B94D79300F2F665 /* Silvery.h in Headers */ = {isa = PBXBuildFile; fileRef = A215942A1B94D79300F2F665 /* Silvery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A21594421B94D7CD00F2F665 /* Model.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Model.swift */; };
 		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; };
@@ -33,6 +34,7 @@
 		50AA9E901CDA77470035B484 /* AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTests.swift; sourceTree = "<group>"; };
 		50AA9E921CDA77470035B484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		50AA9EA41CDA89F20035B484 /* HeirarchyTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = HeirarchyTests.swift; path = ../../silvery/SilveryTests/HeirarchyTests.swift; sourceTree = "<group>"; };
+		50BA18021CF4F62A00B34CE4 /* JsonTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = JsonTests.swift; path = ../../silvery/SilveryTests/JsonTests.swift; sourceTree = "<group>"; };
 		A21594271B94D79300F2F665 /* Silvery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Silvery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A215942A1B94D79300F2F665 /* Silvery.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = Silvery.h; sourceTree = "<group>"; };
 		A215942C1B94D79300F2F665 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -75,6 +77,7 @@
 		50AA9E8F1CDA77470035B484 /* SilveryTests */ = {
 			isa = PBXGroup;
 			children = (
+				50BA18021CF4F62A00B34CE4 /* JsonTests.swift */,
 				50AA9E901CDA77470035B484 /* AssignmentTests.swift */,
 				50AA9EA41CDA89F20035B484 /* HeirarchyTests.swift */,
 				50AA9E921CDA77470035B484 /* Info.plist */,
@@ -225,6 +228,7 @@
 			files = (
 				50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */,
 				50AA9EA51CDA89F20035B484 /* HeirarchyTests.swift in Sources */,
+				50BA18031CF4F62A00B34CE4 /* JsonTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
