@@ -3,7 +3,7 @@ Pod::Spec.new do |s|
     s.version      = "1.0.1"
     s.summary      = "Pure swift property introspection"
     s.description  = <<-DESC
-                        Pure swift property introspection
+                        Pure swift property introspection similar to Objective-C key-value coding.
                         DESC
 
     s.homepage     = "https://github.com/damouse/Silvery"
