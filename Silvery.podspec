@@ -1,14 +1,16 @@
 Pod::Spec.new do |s|
     s.name         = "Silvery"
     s.version      = "1.0.0"
-    s.summary      = "Key-Value Coding (KVC) for native Swift classes and structs"
+    s.summary      = "Pure swift KVC and model object introspection"
     s.description  = <<-DESC
-                        Silvery enables Key-Value Coding (KVC) for native Swift classes and structs.
+                        Pure swift KVC and model object introspection. 
                         DESC
+
     s.homepage     = "https://github.com/bradhilton/Silvery"
     s.license      = { :type => "MIT", :file => "LICENSE" }
-    s.author       = { "Brad Hilton" => "brad@skyvive.com" }
-    s.source       = { :git => "https://github.com/bradhilton/Silvery.git", :tag => "1.0.0" }
+    s.author       = { "Mickey Barboi" => "mickey.barboi@gmail.com" }
+    s.source       = { :git => "https://github.com/damouse/Silvery.git", :tag => "1.0.0" }
+
     s.ios.deployment_target = "8.0"
     s.osx.deployment_target = "10.9"
     s.source_files  = "Silvery", "Silvery/**/*.{swift,h,m}"
