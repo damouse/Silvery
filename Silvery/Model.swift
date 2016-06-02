@@ -110,7 +110,7 @@ extension Silvery {
                     sureValue.codeInto(pointer)
                 }
             } else {
-                offset += property.size()
+                offset += property.size()
             }
         }
     }
