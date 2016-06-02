@@ -118,6 +118,11 @@ class OptionalProperties: XCTestCase {
         XCTAssert(c.str! == "a")
     }
     
+    func testNilOptionalString() {
+        let c = Cat()
+        XCTAssert(c.str == nil)
+    }
+    
     func testOptionalInt() {
         var c = Cat()
         c["int"] = 1

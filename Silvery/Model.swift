@@ -100,9 +100,6 @@ extension Silvery {
                 
                 if let optionalPropertyType = child.value.dynamicType as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
                     if var optionalValue = value {
-                        
-                        // Bad type here
-                        print("Optional unwrap: \(optionalValue), type: \(optionalValue.dynamicType) original value: \(value), target type: \(propertyType)")
                         try x(optionalValue, isY: propertyType)
                         optionalValue.codeOptionalInto(pointer)
                     } else if let nilValue = child.value.dynamicType as? OptionalProperty.Type {
@@ -120,8 +117,9 @@ extension Silvery {
     
     public func valueForKey(key: String) throws -> Property? {
         for child in mirroredChildren() {
-            if child.label == key && String(child.value) != "nil" {
-                
+            // There used to be a nil check here. Failure case likely still exists-- if the thing being coded for is not 
+            // a property, is an optional, and is currently nil then child.value.dynamicType can fail... I think? 
+            if child.label == key {
                 if let property = child.value as? OptionalProperty {
                     return property.property()
                 } else if let property = child.value as? Property {
