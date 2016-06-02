@@ -100,6 +100,9 @@ extension Silvery {
                 
                 if let optionalPropertyType = child.value.dynamicType as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
                     if var optionalValue = value {
+                        
+                        // Bad type here
+                        print("Optional unwrap: \(optionalValue), type: \(optionalValue.dynamicType) original value: \(value), target type: \(propertyType)")
                         try x(optionalValue, isY: propertyType)
                         optionalValue.codeOptionalInto(pointer)
                     } else if let nilValue = child.value.dynamicType as? OptionalProperty.Type {
@@ -123,6 +126,22 @@ extension Silvery {
                     return property.property()
                 } else if let property = child.value as? Property {
                     return property
+                } else {
+                    throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType)
+                }
+            }
+        }
+        
+        return nil
+    }
+    
+    public func typeForKey(key: String) throws -> Any.Type? {
+        for child in mirroredChildren() {
+            if child.label == key {
+                if let optionalPropertyType = child.value.dynamicType as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
+                    return propertyType
+                } else if let property = child.value as? Property {
+                    return property.dynamicType
                 } else {
                     throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType)
                 }

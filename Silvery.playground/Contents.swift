@@ -5,22 +5,25 @@ Try out Silvery here!
 import Foundation
 @testable import Silvery
 
-class Cat: SilveryClass {
-    var str: String
-    
-    init(name: String) {
-        str = name
-    }
-    
-    required init() {
-        str = "asdf"
-    }
+class Squirrel: Silvery {
+    var str = "str"
+    var int: Int?
 }
 
-// Lets get generic introspection working, shall we?
-var c = Cat(name: "Hello!")
+let s = Squirrel()
 
-c["str"] = "There"
+let t = try! s.typeForKey("int")
+print(t)
 
-print(c.str)
 
+for child in s.mirroredChildren() {
+    if child.label == "int" {
+        if let optionalPropertyType = child.value.dynamicType as? OptionalProperty.Type, let propertyType = optionalPropertyType.propertyType() {
+            print(propertyType)
+        } else if let property = child.value as? Property {
+            print(property.dynamicType)
+        } else {
+            print("Nothing")
+        }
+    }
+}

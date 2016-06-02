@@ -145,6 +145,37 @@ class OptionalProperties: XCTestCase {
 }
 
 
+class Squirrel: Silvery {
+    var str = "str"
+    var int: Int?
+}
+
+// Make sure we can access type information from outside a silvery instance
+class TypeProperties: XCTestCase {
+    // Assigned, non-nil
+    func testSimpleProperty() {
+        let s = Squirrel()
+        let t = try! s.typeForKey("str")
+        
+        XCTAssert(t == String.self)
+    }
+    
+    func testOptionalUnassigned() {
+        let s = Squirrel()
+        let t = try! s.typeForKey("int")
+        
+        XCTAssert(t == Int.self)
+    }
+    
+    func testOptionalAssigned() {
+        let s = Squirrel()
+        s.int = 1
+        let t = try! s.typeForKey("int")
+        
+        XCTAssert(t == Int.self)
+    }
+}
+
 
 
 
