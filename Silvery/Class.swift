@@ -76,14 +76,14 @@ extension Class: Convertible {
             // Grab the property and cast it as a property
             guard let type = try silveryReference.typeForKey(propertyName), property = type as? Property.Type else { break }
             
-            print("Have property: \(type)")
+            // print("Have property: \(type)")
             let converted = try property.convert(newValue)
             
-            print("Setting property \(propertyName) to \(converted)")
+            // print("Setting property \(propertyName) to \(converted)")
             try silveryReference.setValue(converted, forKey: propertyName)
         }
         
-        print("Returning object: \(object)")
+        // print("Returning object: \(object)")
         return object
     }
 }

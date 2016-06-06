@@ -15,22 +15,19 @@ class Cat: Class {
     var bool: Bool?
     var float: Float?
     var double: Double?
-    
-    // required init() {}
 }
 
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        
         print("Testing target started")
         
-        // let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34, "double": 56.78]
-        let dict: [String: AnyObject] = ["str": "str"]
+        let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34 as! Float, "double": 56.78 as! Double]
+        // let dict: [String: AnyObject] = ["str": "str"]
         
         let a = try! Cat.from(dict)
-        print("Done: \(a.str)")
+        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
     }
 }
 

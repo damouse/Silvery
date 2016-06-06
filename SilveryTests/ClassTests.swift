@@ -15,8 +15,6 @@ class Fish: Class {
     var bool: Bool?
     var float: Float?
     var double: Double?
-
-    // required init() {}
 }
 
 
