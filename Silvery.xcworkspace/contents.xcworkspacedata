@@ -7,4 +7,10 @@
    <FileRef
       location = "group:/Users/damouse/code/swift/Silvery/Silvery.playground">
    </FileRef>
+   <FileRef
+      location = "group:Pods/Pods.xcodeproj">
+   </FileRef>
+   <FileRef
+      location = "group:Silvery.xcodeproj">
+   </FileRef>
 </Workspace>

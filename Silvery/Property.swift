@@ -6,6 +6,8 @@
 //  Copyright © 2015 Skyvive. All rights reserved.
 //
 
+import DSON
+
 // All model properties must conform to this protocol
 public protocol Property {}
 
@@ -32,12 +34,18 @@ extension Property {
     }
     
     // Unfortunatly this has to be here, since we can't reliably pass out this property's type information
-    func convert(from: Any) -> Self? {
+    static func convert<A>(from: A) throws -> Self? {
+        // return convert(from, to: Self.self)
+
         if let cast = from as? Self {
             return cast
         }
         
-        return nil
+        if let convertible = Self.self as? Convertible.Type {
+            return try convertible.from(from) as! Self
+        }
+        
+        throw ConversionError.NoConversionPossible(from: A.self, type: Self.self)
     }
 }
 

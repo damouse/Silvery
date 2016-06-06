@@ -141,6 +141,7 @@ extension Silvery {
                 } else if let property = child.value as? Property {
                     return property.dynamicType
                 } else {
+                    // Should we just return the type here if its not a property?
                     throw Error.TypeDoesNotConformToProperty(type: child.value.dynamicType)
                 }
             }
