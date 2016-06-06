@@ -30,6 +30,15 @@ extension Property {
     mutating func codeOptionalInto(pointer: UnsafePointer<Void>) {
         (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional<Self>>).memory = self
     }
+    
+    // Unfortunatly this has to be here, since we can't reliably pass out this property's type information
+    func convert(from: Any) -> Self? {
+        if let cast = from as? Self {
+            return cast
+        }
+        
+        return nil
+    }
 }
 
 protocol OptionalProperty : Property {
