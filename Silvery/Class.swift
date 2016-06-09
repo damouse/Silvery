@@ -58,7 +58,7 @@ extension Class: Convertible {
         var silveryReference = object as! Silvery
         
         for k in silveryReference.keys() {
-            print("Object key: \(k)")
+            // print("Object key: \(k)")
             
             if ignored.contains(k) { continue }
             
@@ -98,6 +98,49 @@ extension Class: Convertible {
     }
     
     public func serialize() throws -> AnyObject {
-        return 1
+        var ret: [String: AnyObject] = [:]
+        
+        for k in self.keys() {
+            var value = self[k]
+            
+            if let convertible = value as? Convertible {
+                ret[k] = try convertible.serialize()
+            } else {
+                // Make sure this doesn't go to hell, may have to throw out of here
+                ret[k] = value as! AnyObject?
+            }
+        }
+        
+        return ret as! AnyObject
     }
 }
+
+
+// Fake imports to allow testing of DSON object methods
+import SwiftyJSON
+
+// Performs two steps: serializes "from" to some json-ready form, and converts that serialized form to JSON
+// This serialization mostly means turning objects and structs into Dictionaries recursively
+// Returns a SwiftyJSON object. Raw JSON can be retrieved by accessing .rawData on the result
+public func serialize(from: AnyObject) throws -> JSON {
+    return try DSON.serialize(from)
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

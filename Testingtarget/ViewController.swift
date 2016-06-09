@@ -19,20 +19,44 @@ class Cat: Class {
     var nested: Cat?
 }
 
+class Shark: Class {
+    var str: String? = "str1"
+    var int = 123456
+    var bool = true
+    var flt: Float = 111.111
+    var double: Double = 111.111
+    
+    required init() {}
+}
+
+class Pod: Class {
+    var str: [String]? = ["str1"]
+    var int: [Int]? = [123456]
+    var bool: [Bool]? = [true]
+    var flt: [Float]? = [111.111]
+    var double: [Double]? = [111.111]
+    
+    required init() {}
+}
+
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("Testing target started")
         
-        let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34 as! Float, "double": 56.78 as! Double]
-        // let dict: [String: AnyObject] = ["str": "str"]
+//        let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34 as! Float, "double": 56.78 as! Double]
+//        // let dict: [String: AnyObject] = ["str": "str"]
+//        
+//        let a = try! Cat.from(dict)
+//        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+//        
         
-        let a = try! Cat.from(dict)
-        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+        let f = Pod()
         
-        
-        
+        let json = try! serialize(f)
+        print(json.rawString())
     }
 }
 

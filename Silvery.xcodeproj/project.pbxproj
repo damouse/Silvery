@@ -16,6 +16,7 @@
 		504488131D06130300C29E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504488111D06130300C29E54 /* LaunchScreen.storyboard */; };
 		50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA9E901CDA77470035B484 /* AssignmentTests.swift */; };
 		50AA9EA11CDA792B0035B484 /* Silvery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* Silvery.framework */; };
+		50E1C7991D09BF200035144F /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1C7981D09BF200035144F /* SerializationTests.swift */; };
 		A215942B1B94D79300F2F665 /* Silvery.h in Headers */ = {isa = PBXBuildFile; fileRef = A215942A1B94D79300F2F665 /* Silvery.h */; settings = {ATTRIBUTES = (Public, ); }; };
 		A21594421B94D7CD00F2F665 /* Silvery.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594411B94D7CD00F2F665 /* Silvery.swift */; };
 		A21594441B94D7DB00F2F665 /* Property.swift in Sources */ = {isa = PBXBuildFile; fileRef = A21594431B94D7DB00F2F665 /* Property.swift */; };
@@ -51,6 +52,7 @@
 		50AA9E8E1CDA77470035B484 /* SilveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA9E901CDA77470035B484 /* AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTests.swift; sourceTree = "<group>"; };
 		50AA9E921CDA77470035B484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		50E1C7981D09BF200035144F /* SerializationTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = SerializationTests.swift; path = ../../silvery/SilveryTests/SerializationTests.swift; sourceTree = "<group>"; };
 		678F869A6898C6C97FDDCA7E /* Pods-Silvery.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-Silvery.debug.xcconfig"; path = "Pods/Target Support Files/Pods-Silvery/Pods-Silvery.debug.xcconfig"; sourceTree = "<group>"; };
 		79E1124141FE2CECC0423C1C /* Pods_Silvery.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_Silvery.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		9973B07D3FA3D4CBAA011E49 /* Pods_SilveryTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_SilveryTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -125,6 +127,7 @@
 			isa = PBXGroup;
 			children = (
 				50AA9E901CDA77470035B484 /* AssignmentTests.swift */,
+				50E1C7981D09BF200035144F /* SerializationTests.swift */,
 				504488001D06127400C29E54 /* ClassTests.swift */,
 				50AA9E921CDA77470035B484 /* Info.plist */,
 			);
@@ -473,6 +476,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				504488011D06127400C29E54 /* ClassTests.swift in Sources */,
+				50E1C7991D09BF200035144F /* SerializationTests.swift in Sources */,
 				50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
