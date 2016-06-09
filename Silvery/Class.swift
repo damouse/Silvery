@@ -9,7 +9,7 @@
 import Foundation
 import DSON
 
-public class Class: Silvery {
+public class Class: Silvery, Property {
     
     // All subclasses must be initializable without arguments so silvery can do its work
     required public init() {}
@@ -58,6 +58,8 @@ extension Class: Convertible {
         var silveryReference = object as! Silvery
         
         for k in silveryReference.keys() {
+            print("Object key: \(k)")
+            
             if ignored.contains(k) { continue }
             
             // This is the name of the property. It could be switched out for another value based on propertyKeysToJson
@@ -76,7 +78,15 @@ extension Class: Convertible {
             // Grab the property and cast it as a property
             guard let type = try silveryReference.typeForKey(propertyName), property = type as? Property.Type else { break }
             
-            // print("Have property: \(type)")
+            // Testing. This may let us remove the DSON code and keep the libs seperate
+//            let type = try silveryReference.typeForKey(propertyName)!
+//            let property = type as! Property.Type
+//            
+//            if let convertible = type as? Convertible.Type {
+//                print("Have a convertible! Type: \(type)")
+//            }
+            
+            print("Have property: \(type)")
             let converted = try property.convert(newValue)
             
             // print("Setting property \(propertyName) to \(converted)")
@@ -85,5 +95,9 @@ extension Class: Convertible {
         
         // print("Returning object: \(object)")
         return object
+    }
+    
+    public func serialize() throws -> AnyObject {
+        return 1
     }
 }

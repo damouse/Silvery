@@ -15,6 +15,8 @@ class Cat: Class {
     var bool: Bool?
     var float: Float?
     var double: Double?
+    
+    var nested: Cat?
 }
 
 class ViewController: UIViewController {
@@ -28,6 +30,9 @@ class ViewController: UIViewController {
         
         let a = try! Cat.from(dict)
         print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+        
+        
+        
     }
 }
 

@@ -42,6 +42,7 @@ extension Property {
         }
         
         if let convertible = Self.self as? Convertible.Type {
+            print("Property.convert has a convertible")
             return try convertible.from(from) as! Self
         }
         
@@ -78,4 +79,13 @@ extension Optional : OptionalProperty {
     }
 }
 
+
+// Just testing, thanks
+//public func testGeneric <A: Property>(from: Any, type: A.Type) throws -> A? {
+//    if let convertible = A.self as? Convertible.Type {
+//        return try convertible.from(from) as! A
+//    }
+//    
+//    return nil
+//}
 
