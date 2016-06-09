@@ -78,22 +78,18 @@ extension Class: Convertible {
             // Grab the property and cast it as a property
             guard let type = try silveryReference.typeForKey(propertyName), property = type as? Property.Type else { break }
             
-            // Testing. This may let us remove the DSON code and keep the libs seperate
-//            let type = try silveryReference.typeForKey(propertyName)!
-//            let property = type as! Property.Type
-//            
-//            if let convertible = type as? Convertible.Type {
-//                print("Have a convertible! Type: \(type)")
-//            }
+            // Lets us remove the DSON - Silvery circular dependency crap
+            // let cast = property.cast(newValue)
+            // print("Able to cast value to: \(cast.dynamicType)")
             
-            // print("Have property: \(type)")
+            // if let isConvertible = property.castAs(Convertible.Type.self) {
+            //    print("Able to retrieve convertible type \(isConvertible)")
+            // }
+            
             let converted = try property.convert(newValue)
-            
-            // print("Setting property \(propertyName) to \(converted)")
             try silveryReference.setValue(converted, forKey: propertyName)
         }
         
-        // print("Returning object: \(object)")
         return object
     }
     

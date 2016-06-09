@@ -51,19 +51,19 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("Testing target started")
         
-//        let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34 as! Float, "double": 56.78 as! Double]
-//        // let dict: [String: AnyObject] = ["str": "str"]
+        let dict: [String: AnyObject] = ["str": "str", "int": 1, "bool": true, "float": 12.34 as! Float, "double": 56.78 as! Double]
+        // let dict: [String: AnyObject] = ["str": "str"]
+        
+        let a = try! Cat.from(dict)
+        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+
+        
+//        let s = Shark()
+//        s.parents = ["joe": Shark(), "anne": Shark()]
 //        
-//        let a = try! Cat.from(dict)
-//        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+//        let json = try! serialize(s)
 //        
-        
-        let s = Shark()
-        s.parents = ["joe": Shark(), "anne": Shark()]
-        
-        let json = try! serialize(s)
-        
-        print(getString(json.rawString()))
+//        print(getString(json.rawString()))
     }
 }
 
