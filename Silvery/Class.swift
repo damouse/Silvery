@@ -86,7 +86,7 @@ extension Class: Convertible {
 //                print("Have a convertible! Type: \(type)")
 //            }
             
-            print("Have property: \(type)")
+            // print("Have property: \(type)")
             let converted = try property.convert(newValue)
             
             // print("Setting property \(propertyName) to \(converted)")
@@ -105,7 +105,7 @@ extension Class: Convertible {
             
             if let convertible = value as? Convertible {
                 ret[k] = try convertible.serialize()
-                print("Assigned \(k) == \(ret[k])")
+                // print("Assigned \(k) == \(ret[k])")
             } else {
                 // Make sure this doesn't go to hell, may have to throw out of here
                 ret[k] = value as! AnyObject?
