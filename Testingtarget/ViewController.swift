@@ -9,6 +9,7 @@
 import UIKit
 import Silvery
 
+
 class Cat: Class {
     var str: String?
     var int: Int?
@@ -25,6 +26,10 @@ class Shark: Class {
     var bool = true
     var flt: Float = 111.111
     var double: Double = 111.111
+    
+    var family: Pod?
+    var siblings: [Shark] = []
+    var parents: [String: Shark] = [:]
     
     required init() {}
 }
@@ -53,10 +58,27 @@ class ViewController: UIViewController {
 //        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
 //        
         
-        let f = Pod()
+        let s = Shark()
+        s.parents = ["joe": Shark(), "anne": Shark()]
         
-        let json = try! serialize(f)
-        print(json.rawString())
+        let json = try! serialize(s)
+        
+        print(getString(json.rawString()))
     }
+}
+
+// Clean up the result for readability
+func getString(json: String?) -> String? {
+    var s = json!
+    
+    s = s.stringByReplacingOccurrencesOfString("\n ", withString: "")
+    s = s.stringByReplacingOccurrencesOfString("\n", withString: "")
+    //s = s.stringByReplacingOccurrencesOfString("\"", withString: "\\\"")
+    
+    for whitespace in [" ", "  ", "   ", "    ", "     "] {
+        s = s.stringByReplacingOccurrencesOfString(whitespace, withString: "")
+    }
+    
+    return s
 }
 

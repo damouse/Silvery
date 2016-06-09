@@ -105,6 +105,7 @@ extension Class: Convertible {
             
             if let convertible = value as? Convertible {
                 ret[k] = try convertible.serialize()
+                print("Assigned \(k) == \(ret[k])")
             } else {
                 // Make sure this doesn't go to hell, may have to throw out of here
                 ret[k] = value as! AnyObject?
