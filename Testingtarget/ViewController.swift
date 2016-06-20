@@ -9,42 +9,6 @@
 import UIKit
 import Silvery
 
-
-class Cat: Class {
-    var str: String?
-    var int: Int?
-    var bool: Bool?
-    var float: Float?
-    var double: Double?
-    
-    var nested: Cat?
-}
-
-class Shark: Class {
-    var str: String? = "str1"
-    var int = 123456
-    var bool = true
-    var flt: Float = 111.111
-    var double: Double = 111.111
-    
-    var family: Pod?
-    var siblings: [Shark] = []
-    var parents: [String: Shark] = [:]
-    
-    required init() {}
-}
-
-class Pod: Class {
-    var str: [String]? = ["str1"]
-    var int: [Int]? = [123456]
-    var bool: [Bool]? = [true]
-    var flt: [Float]? = [111.111]
-    var double: [Double]? = [111.111]
-    
-    required init() {}
-}
-
-
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -58,12 +22,18 @@ class ViewController: UIViewController {
 //        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
 //        
         
-        let s = Shark()
-//        s.parents = ["joe": Shark(), "anne": Shark()]
+        class Dolphin: Class {
+            var age = 14
+        }
         
-        let json = try! serialize(s)
+        class Pod: Class {
+            var members: [String: Dolphin] = ["bill": Dolphin(), "steve": Dolphin()]
+        }
         
-        print(json.rawString(options: NSJSONWritingOptions())!)
+        let json = try! serialize(Pod())
+        let str = json.rawString(options: NSJSONWritingOptions())
+        
+        print(str)
     }
 }
 
