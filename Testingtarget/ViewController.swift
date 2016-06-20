@@ -59,11 +59,11 @@ class ViewController: UIViewController {
 //        
         
         let s = Shark()
-        s.parents = ["joe": Shark(), "anne": Shark()]
+//        s.parents = ["joe": Shark(), "anne": Shark()]
         
         let json = try! serialize(s)
         
-        print(getString(json.rawString()))
+        print(json.rawString(options: NSJSONWritingOptions())!)
     }
 }
 

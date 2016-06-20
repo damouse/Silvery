@@ -19,10 +19,6 @@ class Shark: Class {
     var flt: Float = 111.111
     var double: Double = 111.111
     
-    var family: Pod?
-    var siblings: [Shark] = []
-    var parents: [String: Shark] = [:]
-    
     required init() {}
 }
 
@@ -49,13 +45,14 @@ class SerializationTests: XCTestCase {
 //    }
 
 // Please replace these with more sane tests
-//    func testPrimitiveObject() {
-//        let f = Shark()
-//        let json = try! serialize(f)
-//        
-//        XCTAssert(json.rawString()! == "{\n  \"str\" : \"str1\",\n  \"int\" : 123456,\n  \"bool\" : true,\n  \"flt\" : 111.111,\n  \"double\" : 111.111\n}")
-//    }
-//    
+    func testPrimitiveObject() {
+        let f = Shark()
+        let json = try! serialize(f)
+        let str = json.rawString(options: NSJSONWritingOptions())!
+        
+        XCTAssert(str == "{\"str\":\"str1\",\"int\":123456,\"bool\":true,\"flt\":111.111,\"double\":111.111}")
+    }
+//
 //    func testPrimitiveArrays() {
 //        let f = Pod()
 //        let json = try! serialize(f)
