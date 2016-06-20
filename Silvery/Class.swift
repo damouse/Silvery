@@ -5,6 +5,9 @@
 //  Created by damouse on 6/6/16.
 //  Copyright © 2016 I. All rights reserved.
 //
+// TODO:    export class convertible ipmlementation if possible
+//          Make sure structs and enums come through ok
+
 
 import Foundation
 import DSON
@@ -48,7 +51,7 @@ extension Class: Convertible {
     public static func from<T>(from: T) throws -> Self {
         // Automatically cover cases where "from" is not the correct type
         let json = try DSON.convert(from, to: [String: AnyObject].self)
-        print("Have json: \(json)")
+        // print("Have json: \(json)")
         
         let ignored = ignoreProperties()
         let transformed = propertyKeysToJson()
