@@ -9,41 +9,17 @@
 import UIKit
 import Silvery
 
-
 class Cat: Class {
     var str: String?
     var int: Int?
     var bool: Bool?
     var float: Float?
     var double: Double?
-    
-    var nested: Cat?
 }
 
-class Shark: Class {
-    var str: String? = "str1"
-    var int = 123456
-    var bool = true
-    var flt: Float = 111.111
-    var double: Double = 111.111
-    
-    var family: Pod?
-    var siblings: [Shark] = []
-    var parents: [String: Shark] = [:]
-    
-    required init() {}
+struct Pigeon: Silvery {
+    var str = "defaultString"
 }
-
-class Pod: Class {
-    var str: [String]? = ["str1"]
-    var int: [Int]? = [123456]
-    var bool: [Bool]? = [true]
-    var flt: [Float]? = [111.111]
-    var double: [Double]? = [111.111]
-    
-    required init() {}
-}
-
 
 class ViewController: UIViewController {
     
