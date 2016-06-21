@@ -6,8 +6,6 @@
 //  Copyright © 2015 Skyvive. All rights reserved.
 //
 
-import DSON
-
 // All model properties must conform to this protocol
 public protocol Property {}
 
@@ -33,41 +31,9 @@ extension Property {
         (UnsafeMutablePointer(pointer) as UnsafeMutablePointer<Optional<Self>>).memory = self
     }
     
-    // Unfortunatly this has to be here, since we can't reliably pass out this property's type information
-    static func convert<A>(from: A) throws -> Self? {
-        // return convert(from, to: Self.self)
-
-        if let cast = from as? Self {
-            return cast
-        }
-        
-        if let convertible = Self.self as? Convertible.Type {
-            // print("Property.convert has a convertible")
-            return try convertible.from(from) as! Self
-        }
-        
-        throw ConversionError.NoConversionPossible(from: A.self, type: Self.self)
-    }
-    
-    // It seems this may work. See the middle of the "from" method in Class.swift
-    static func cast(from: Any) -> Self? {
+    // Attempt to cast some value to this type
+    public static func cast(from: Any) -> Self? {
         return from as? Self
-    }
-    
-    static func castAs<A>(type: A.Type) -> A.Type? {
-        print("Checking \(Self.self.dynamicType) as \(A.self)")
-        
-        if let convertible = Self.self as? A {
-            print("Raw checl")
-        }
-
-        
-        if let convertible = Self.self as? A.Type {
-            print("Unraw check")
-            return convertible
-        }
-        
-        return nil
     }
 }
 
@@ -99,14 +65,3 @@ extension Optional : OptionalProperty {
         }
     }
 }
-
-
-// Just testing, thanks
-//public func testGeneric <A: Property>(from: Any, type: A.Type) throws -> A? {
-//    if let convertible = A.self as? Convertible.Type {
-//        return try convertible.from(from) as! A
-//    }
-//    
-//    return nil
-//}
-
