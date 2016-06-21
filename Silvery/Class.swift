@@ -82,12 +82,12 @@ extension Class: Convertible {
             guard let type = try silveryReference.typeForKey(propertyName), property = type as? Property.Type else { break }
             
             // Testing. This may let us remove the DSON code and keep the libs seperate
-//            let type = try silveryReference.typeForKey(propertyName)!
-//            let property = type as! Property.Type
-//            
-//            if let convertible = type as? Convertible.Type {
-//                print("Have a convertible! Type: \(type)")
-//            }
+            let ttype = try silveryReference.typeForKey(propertyName)!
+            let pproperty = type as! Property.Type
+            
+            if let convertible = pproperty as? Convertible.Type {
+                print("Have a convertible! Type: \(ttype)")
+            }
             
             // print("Have property: \(type)")
             let converted = try property.convert(newValue)

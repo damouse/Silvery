@@ -14,6 +14,7 @@
 		5044880E1D06130300C29E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5044880C1D06130300C29E54 /* Main.storyboard */; };
 		504488101D06130300C29E54 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 5044880F1D06130300C29E54 /* Assets.xcassets */; };
 		504488131D06130300C29E54 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 504488111D06130300C29E54 /* LaunchScreen.storyboard */; };
+		505C57981D19E5F00009C149 /* StructAssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 505C57971D19E5F00009C149 /* StructAssignmentTests.swift */; };
 		50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50AA9E901CDA77470035B484 /* AssignmentTests.swift */; };
 		50AA9EA11CDA792B0035B484 /* Silvery.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = A21594271B94D79300F2F665 /* Silvery.framework */; };
 		50E1C7991D09BF200035144F /* SerializationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 50E1C7981D09BF200035144F /* SerializationTests.swift */; };
@@ -49,6 +50,7 @@
 		5044880F1D06130300C29E54 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		504488121D06130300C29E54 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		504488141D06130300C29E54 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		505C57971D19E5F00009C149 /* StructAssignmentTests.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = StructAssignmentTests.swift; path = ../../../../../Damouse/code/swift/silvery/SilveryTests/StructAssignmentTests.swift; sourceTree = "<group>"; };
 		50AA9E8E1CDA77470035B484 /* SilveryTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = SilveryTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		50AA9E901CDA77470035B484 /* AssignmentTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AssignmentTests.swift; sourceTree = "<group>"; };
 		50AA9E921CDA77470035B484 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -128,6 +130,7 @@
 			children = (
 				50AA9E901CDA77470035B484 /* AssignmentTests.swift */,
 				50E1C7981D09BF200035144F /* SerializationTests.swift */,
+				505C57971D19E5F00009C149 /* StructAssignmentTests.swift */,
 				504488001D06127400C29E54 /* ClassTests.swift */,
 				50AA9E921CDA77470035B484 /* Info.plist */,
 			);
@@ -478,6 +481,7 @@
 				504488011D06127400C29E54 /* ClassTests.swift in Sources */,
 				50E1C7991D09BF200035144F /* SerializationTests.swift in Sources */,
 				50AA9E911CDA77470035B484 /* AssignmentTests.swift in Sources */,
+				505C57981D19E5F00009C149 /* StructAssignmentTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

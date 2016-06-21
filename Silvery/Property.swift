@@ -48,6 +48,10 @@ extension Property {
         
         throw ConversionError.NoConversionPossible(from: A.self, type: Self.self)
     }
+    
+    static func cast(from: Any) -> Self? {
+        return from as? Self
+    }
 }
 
 protocol OptionalProperty : Property {

@@ -9,6 +9,18 @@
 import UIKit
 import Silvery
 
+class Cat: Class {
+    var str: String?
+    var int: Int?
+    var bool: Bool?
+    var float: Float?
+    var double: Double?
+}
+
+struct Pigeon: Silvery {
+    var str = "defaultString"
+}
+
 class ViewController: UIViewController {
     
     override func viewDidLoad() {
@@ -20,20 +32,25 @@ class ViewController: UIViewController {
 //        
 //        let a = try! Cat.from(dict)
 //        print("Done: \(a.str) \(a.int) \(a.bool) \(a.float) \(a.double)")
+
+        
+//        class Dolphin: Class {
+//            var age = 14
+//        }
 //        
+//        class Pod: Class {
+//            var members: [String: Dolphin] = ["bill": Dolphin(), "steve": Dolphin()]
+//        }
+//        
+//        let json = try! serialize(Pod())
+//        let str = json.rawString(options: NSJSONWritingOptions())
+//        
+//        print(str)
         
-        class Dolphin: Class {
-            var age = 14
-        }
-        
-        class Pod: Class {
-            var members: [String: Dolphin] = ["bill": Dolphin(), "steve": Dolphin()]
-        }
-        
-        let json = try! serialize(Pod())
-        let str = json.rawString(options: NSJSONWritingOptions())
-        
-        print(str)
+        // Struct Testing
+        var p = Pigeon()
+        p["str"] = "new"
+        print(p["str"])
     }
 }
 
