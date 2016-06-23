@@ -7,7 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		504487FF1D060D8000C29E54 /* Class.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504487FE1D060D8000C29E54 /* Class.swift */; };
 		504488091D06130300C29E54 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 504488081D06130300C29E54 /* AppDelegate.swift */; };
 		5044880B1D06130300C29E54 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5044880A1D06130300C29E54 /* ViewController.swift */; };
 		5044880E1D06130300C29E54 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 5044880C1D06130300C29E54 /* Main.storyboard */; };
@@ -39,7 +38,6 @@
 
 /* Begin PBXFileReference section */
 		1A3660E0B22A43ABDAFAB3F4 /* Pods-SilveryTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-SilveryTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-SilveryTests/Pods-SilveryTests.debug.xcconfig"; sourceTree = "<group>"; };
-		504487FE1D060D8000C29E54 /* Class.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Class.swift; sourceTree = "<group>"; };
 		504488061D06130300C29E54 /* Testingtarget.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Testingtarget.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		504488081D06130300C29E54 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5044880A1D06130300C29E54 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -174,7 +172,6 @@
 				A21594411B94D7CD00F2F665 /* Silvery.swift */,
 				A21594431B94D7DB00F2F665 /* Property.swift */,
 				A21594451B94D7E100F2F665 /* Extensions.swift */,
-				504487FE1D060D8000C29E54 /* Class.swift */,
 				A21594471B94D7E600F2F665 /* Error.swift */,
 				A215942C1B94D79300F2F665 /* Info.plist */,
 			);
@@ -484,7 +481,6 @@
 				A21594481B94D7E600F2F665 /* Error.swift in Sources */,
 				A21594441B94D7DB00F2F665 /* Property.swift in Sources */,
 				A21594461B94D7E100F2F665 /* Extensions.swift in Sources */,
-				504487FF1D060D8000C29E54 /* Class.swift in Sources */,
 				A21594421B94D7CD00F2F665 /* Silvery.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
