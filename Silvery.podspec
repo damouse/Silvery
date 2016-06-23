@@ -1,6 +1,6 @@
 Pod::Spec.new do |s|
     s.name         = "Silvery"
-    s.version      = "1.0.1"
+    s.version      = "1.0.2"
     s.summary      = "Pure swift property introspection"
     s.description  = <<-DESC
                         Pure swift property introspection similar to Objective-C key-value coding.
